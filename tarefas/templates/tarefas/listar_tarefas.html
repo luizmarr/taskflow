@@ -5,10 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tarefas/style.css' %}">
 </head>
 
 <body>
-    <h1>Lista de Tarefas</h1>
+    <h1>TaskFlow</h1>
+
+    <form>
+        <input type="text" placeholder="Digite sua tarefa...">
+        <button type="submit">Adicionar Tarefa</button>
+    </form>
+
+    <p>Organize suas tarefas, um passo de cada vez.</p>
+
+    <h2>Minhas Tarefas</h2>
 
     {% for tarefa in tarefas %}
         <p>{{ tarefa.titulo }} - {{ tarefa.descricao }}</p>
